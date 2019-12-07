@@ -1,6 +1,7 @@
 // == Import : npm
 import React from 'react';
 import Proptypes from 'prop-types';
+import classNames from 'classnames';
 
 
 // == Composant LoginForm
@@ -35,24 +36,40 @@ const LoginForm = ({
       <section className="modal-main">
         <h2 className="modal-title">Connexion</h2>
         <form className="modal-form" onSubmit={handleSubmit}>
-          <input
-            className="modal-form-element"
-            required
-            placeholder="Adresse email*"
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChangeValue}
-          />
-          <input
-            className="modal-form-element"
-            required
-            placeholder="Mot de passe*"
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChangeValue}
-          />
+          <div className="modal-form-element">
+            <input
+              id="email"
+              className={classNames('modal-form-element-field', { 'modal-form-element-field--filled': email.length > 0 })}
+              required
+              name="email"
+              value={email}
+              onChange={handleChangeValue}
+              type="email"
+            />
+            <label
+              className="modal-form-element-label"
+              htmlFor="email"
+            >
+              Adresse email
+            </label>
+          </div>
+          <div className="modal-form-element">
+            <input
+              id="password"
+              className={classNames('modal-form-element-field', { 'modal-form-element-field--filled': password.length > 0 })}
+              required
+              name="password"
+              value={password}
+              onChange={handleChangeValue}
+              type="password"
+            />
+            <label
+              className="modal-form-element-label"
+              htmlFor="password"
+            >
+              Mot de passe
+            </label>
+          </div>
           { message.error && (
             <div className="modal-form-message modal-form-message--error">
               {message.content}
