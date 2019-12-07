@@ -1,6 +1,7 @@
 // == Import : npm
 import React from 'react';
 import Proptypes from 'prop-types';
+import classNames from 'classnames';
 
 
 // == Composant RegisterForm
@@ -41,42 +42,78 @@ const RegisterForm = ({
           <div>
             <h2 className="modal-title">Inscription</h2>
             <form className="modal-form" onSubmit={handleSubmit}>
-              <input
-                className="modal-form-element"
-                required
-                name="pseudo"
-                value={pseudo}
-                onChange={handleChangeValue}
-                placeholder="Pseudo * (Minimum 4 caractères)"
-                type="text"
-              />
-              <input
-                className="modal-form-element"
-                required
-                name="email"
-                value={email}
-                onChange={handleChangeValue}
-                placeholder="Adresse email *"
-                type="email"
-              />
-              <input
-                className="modal-form-element"
-                required
-                name="password"
-                value={password}
-                onChange={handleChangeValue}
-                placeholder="Mot de passe * (Minimum 6 caractères)"
-                type="password"
-              />
-              <input
-                className="modal-form-element"
-                required
-                name="confirmPassword"
-                value={confirmPassword}
-                onChange={handleChangeValue}
-                placeholder="Confirmer mot de passe *"
-                type="password"
-              />
+              <div className="modal-form-element">
+                <input
+                  id="pseudo"
+                  className={classNames('modal-form-element-field', { 'modal-form-element-field--filled': pseudo.length > 0 })}
+                  required
+                  name="pseudo"
+                  value={pseudo}
+                  onChange={handleChangeValue}
+                  type="text"
+                />
+                <label
+                  className="modal-form-element-label"
+                  htmlFor="pseudo"
+                >
+                  Pseudo
+                </label>
+
+                <span className="modal-form-element-help">Le pseudo doit contenir au moins 3 caractères</span>
+              </div>
+              <div className="modal-form-element">
+                <input
+                  id="email"
+                  className={classNames('modal-form-element-field', { 'modal-form-element-field--filled': email.length > 0 })}
+                  required
+                  name="email"
+                  value={email}
+                  onChange={handleChangeValue}
+                  type="email"
+                />
+                <label
+                  className="modal-form-element-label"
+                  htmlFor="email"
+                >
+                  Adresse email
+                </label>
+              </div>
+              <div className="modal-form-element">
+                <input
+                  id="password"
+                  className={classNames('modal-form-element-field', { 'modal-form-element-field--filled': password.length > 0 })}
+                  required
+                  name="password"
+                  value={password}
+                  onChange={handleChangeValue}
+                  type="password"
+                />
+                <label
+                  className="modal-form-element-label"
+                  htmlFor="password"
+                >
+                  Mot de passe
+                </label>
+              </div>
+              <div className="modal-form-element">
+                <input
+                  id="confirmPassword"
+                  className={classNames('modal-form-element-field', { 'modal-form-element-field--filled': confirmPassword.length > 0 })}
+                  required
+                  name="confirmPassword"
+                  value={confirmPassword}
+                  onChange={handleChangeValue}
+                  type="password"
+                />
+                <label
+                  className="modal-form-element-label"
+                  htmlFor="confirmPassword"
+                >
+                  Confirmer mot de passe
+                </label>
+
+                <span className="modal-form-element-help">Le mot de passe doit contenir au moins 6 caractères</span>
+              </div>
               <label className="modal-form-label">
                 <input
                   type="checkbox"

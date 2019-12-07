@@ -59,8 +59,60 @@
     }
     
     &-element, &--submit {
-      @include form-element;
+      color: $colorLightTheme;
+      
+    }
 
+    &-element {
+      position: relative;
+      margin: 1.5rem 0 1rem;
+  
+      &-field {
+        @include form-element;
+        margin: .2rem 0;
+  
+        &--filled {
+          & + .modal-form-element-label {
+            top: -10px;
+            bottom: auto;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: .7em;
+            padding: .3rem 1rem;
+            border-radius: $radius $radius 0 0;
+            border-left: 2px solid $turquoise;
+            background-color: #FFFFFF;
+          }
+        }
+
+        &:focus + .modal-form-element-label {
+          border-color: $blue;
+        }
+      }
+    
+      &-label {
+        font-size: 1em;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        padding: 1rem;
+        width: 100%;
+        font-weight: 500;
+        color: $preferenceTextLabelColor;
+        transition: top linear .15s;
+  
+        &::after {
+          content: "*";
+          color: #ad4848;
+          margin-left: .15rem;
+        }
+      }
+
+      &-help {
+        color: #ccc;
+        font-size: .8em
+      }
     }
     &--submit {
       @include form-submit;
@@ -71,6 +123,7 @@
       display: block;
       margin: 0 1rem .5rem;
     }
+
   }
 
   &--checkbox-label {
