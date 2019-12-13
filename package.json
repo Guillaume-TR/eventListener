@@ -11,12 +11,12 @@
     "cln": "rm -rf api/node_modules web/node_modules web/dist"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.16.0",
-    "babel-eslint": "^10.0.3"
+    "eslint-plugin-react": "^7.16.0"
   }
 }
