@@ -1,6 +1,6 @@
 module.exports = (router, nodemailer) => {
   const transport = {
-    host: 'smtp.gmail.com',
+    host: process.env.MAIL_HOST,
     auth: {
       user: process.env.MAIL_USER,
       pass: process.env.MAIL_PASS,
@@ -9,19 +9,19 @@ module.exports = (router, nodemailer) => {
 
   const transporter = nodemailer.createTransport(transport);
 
-  transporter.verify((error, success) => {
+  transporter.verify((error) => {
     if (error) {
-      console.error('transporter', error);
+      console.error('Transporter error :', error);
     }
   });
 
-  router.post('/contact/send', (req, res, next) => {
+  router.post('/contact/send', (request, response) => {
     const {
       name,
       email,
       object,
       message,
-    } = req.body.name;
+    } = request.body.name;
 
     const content = `name: ${name} \n email: ${email} \n object: ${object} \n message: ${message}`;
 
@@ -32,15 +32,16 @@ module.exports = (router, nodemailer) => {
       text: content,
     };
 
-    transporter.sendMail(mail, (error, data) => {
+    transporter.sendMail(mail, (error) => {
       if (error) {
-        res.json({
-          msg: 'fail',
-          error,
+        response.json({
+          error: true,
+          errorMessage: error,
         });
-      } else {
-        res.json({
-          msg: 'success',
+      }
+      else {
+        response.json({
+          error: false,
         });
       }
     });

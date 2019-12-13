@@ -1,7 +1,6 @@
 const Event = require('../models/Event');
 
 class EventController {
-
   /**
    * Get all events
    * @param {object} request
@@ -26,7 +25,8 @@ class EventController {
       response.json({
         status: 'Bad data received',
       });
-    } else {
+    }
+    else {
       Event.find(
         eventId,
         (result) => {
@@ -35,7 +35,8 @@ class EventController {
               status: 'success',
               result,
             });
-          } else {
+          }
+          else {
             response.json({
               status: "Event doesn't exist",
             });
@@ -58,7 +59,8 @@ class EventController {
       response.json({
         status: 'Bad data received',
       });
-    } else {
+    }
+    else {
       Event.findPrice(
         price,
         (result) => {
@@ -67,7 +69,8 @@ class EventController {
               status: 'success',
               result,
             });
-          } else {
+          }
+          else {
             response.json({
               status: "Event doesn't exist",
             });
@@ -90,7 +93,8 @@ class EventController {
       response.json({
         status: 'Bad data received',
       });
-    } else {
+    }
+    else {
       Event.findLive(
         live,
         (result) => {
@@ -99,7 +103,8 @@ class EventController {
               status: 'success',
               result,
             });
-          } else {
+          }
+          else {
             response.json({
               status: "Event doesn't exist",
             });
@@ -125,7 +130,8 @@ class EventController {
             status: 'success',
             result,
           });
-        } else {
+        }
+        else {
           response.json({
             status: "Event doesn't exist",
           });
@@ -150,7 +156,8 @@ class EventController {
             status: 'success',
             result,
           });
-        } else {
+        }
+        else {
           response.json({
             status: "Event doesn't exist",
           });
@@ -175,7 +182,8 @@ class EventController {
             status: 'success',
             result,
           });
-        } else {
+        }
+        else {
           response.json({
             status: "Event doesn't exist",
           });
@@ -200,7 +208,8 @@ class EventController {
             status: 'success',
             result,
           });
-        } else {
+        }
+        else {
           response.json({
             status: "Event doesn't exist",
           });
@@ -225,7 +234,8 @@ class EventController {
             status: 'success',
             result,
           });
-        } else {
+        }
+        else {
           response.json({
             status: "Event doesn't exist",
           });
@@ -251,7 +261,8 @@ class EventController {
             status: 'success',
             result,
           });
-        } else {
+        }
+        else {
           response.json({
             status: "Event doesn't exist",
           });
@@ -273,7 +284,8 @@ class EventController {
       response.json({
         status: 'Not a number',
       });
-    } else {
+    }
+    else {
       Event.sortByStartDate(
         number,
         (result) => {
@@ -282,7 +294,8 @@ class EventController {
               status: 'success',
               result,
             });
-          } else {
+          }
+          else {
             response.json({
               status: "Event doesn't exist",
             });

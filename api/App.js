@@ -2,7 +2,6 @@ const EventController = require('./controllers/EventController');
 const UserController = require('./controllers/UserController');
 
 module.exports = (server, router) => {
-
   // * //
 
   /**
