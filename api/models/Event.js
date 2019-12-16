@@ -1,7 +1,6 @@
 const DBConnect = require('../config/db');
 
 class Event {
-
   /**
    * Get all Events
    * @param {callback} callbackGetAllEvents
@@ -12,15 +11,13 @@ class Event {
     DBConnect.query(
       sqlQuery,
       (error, result) => {
-        
         if (error) {
-
           callbackGetAllEvents({
             error: true,
             errorMessage: error,
           });
-        } else {
-          
+        }
+        else {
           callbackGetAllEvents({
             error: false,
             errorMessage: null,
@@ -28,7 +25,7 @@ class Event {
             data: result,
           });
         }
-      }
+      },
     );
   }
 
@@ -44,16 +41,14 @@ class Event {
       sqlQuery,
       id,
       (error, result) => {
-
         if (error) {
-
           callbackGetEvent({
             error: true,
             errorMessage: error,
           });
-        } else {
-          
-          const sqlQueryTags = 'SELECT tag.* FROM `tag` LEFT JOIN has ON has.tag_id = tag.id WHERE has.event_id = ?'
+        }
+        else {
+          const sqlQueryTags = 'SELECT tag.* FROM `tag` LEFT JOIN has ON has.tag_id = tag.id WHERE has.event_id = ?';
 
           DBConnect.query(
             sqlQueryTags,
@@ -63,9 +58,9 @@ class Event {
                 callbackGetEvent({
                   error: true,
                   errorMessage: errorTags,
-                })
-              } else {
-
+                });
+              }
+              else {
                 callbackGetEvent({
                   error: false,
                   errorMessage: null,
@@ -76,10 +71,10 @@ class Event {
                   },
                 });
               }
-            }
+            },
           );
         }
-      }
+      },
     );
   }
 
@@ -88,7 +83,6 @@ class Event {
   * @param {integer} price
   * @param {callback} callbackGetEventByPrice
   */
-
   static findPrice(price, callbackGetEventByPrice) {
     const sqlQuery = 'SELECT * FROM event where price = ?';
 
@@ -96,24 +90,22 @@ class Event {
       sqlQuery,
       price,
       (error, result) => {
-
-       if (error) {
-
-         callbackGetEventByPrice({
-           error: true,
-           errorMessage: error,
-         });
-       } else {
-
-         callbackGetEventByPrice({
-           error: false,
-           errorMessage: null,
-           rowMatch: result.length > 0,
-           data: result,
-         });
-       }
-      }
-    )
+        if (error) {
+          callbackGetEventByPrice({
+            error: true,
+            errorMessage: error,
+          });
+        }
+        else {
+          callbackGetEventByPrice({
+            error: false,
+            errorMessage: null,
+            rowMatch: result.length > 0,
+            data: result,
+          });
+        }
+      },
+    );
   }
 
   /**
@@ -128,125 +120,117 @@ class Event {
       sqlQuery,
       live,
       (error, result) => {
-
-       if(error) {
-
-         callbackGetEventByDiffusion({
-           error: true,
-           errorMessage: error,
-         });
-       } else {
-
-         callbackGetEventByDiffusion({
-           error: false,
-           errorMessage: null,
-           rowMatch: result.length > 0,
-           data: result,
-         });
-       }
-      }
-    )
+        if (error) {
+          callbackGetEventByDiffusion({
+            error: true,
+            errorMessage: error,
+          });
+        }
+        else {
+          callbackGetEventByDiffusion({
+            error: false,
+            errorMessage: null,
+            rowMatch: result.length > 0,
+            data: result,
+          });
+        }
+      },
+    );
   }
 
   /**
   * Find Event by localisation
-  * @param {string} loc
+  * @param {string} location
   * @param {callback} callbackGetEventByLocalisation
   */
-  static findLocalisation(loc, callbackGetEventByLocalisation) {
-    loc = '%' + loc + '%';
+  static findLocalisation(location, callbackGetEventByLocalisation) {
+    const locationFormat = `%${location}%`;
     const sqlQuery = 'SELECT * from event where address like N?';
 
     DBConnect.query(
       sqlQuery,
-      loc,
+      locationFormat,
       (error, result) => {
-
-        if(error) {
-
-        callbackGetEventByLocalisation({
-          error: true,
-          errorMessage: error,
-        });
-        } else {
-
-        callbackGetEventByLocalisation({
-          error: false,
-          errorMessage: null,
-          rowMatch: result.length > 0,
-          data: result,
-          query: sqlQuery,
-        });
+        if (error) {
+          callbackGetEventByLocalisation({
+            error: true,
+            errorMessage: error,
+          });
         }
-      }
-    )
+        else {
+          callbackGetEventByLocalisation({
+            error: false,
+            errorMessage: null,
+            rowMatch: result.length > 0,
+            data: result,
+            query: sqlQuery,
+          });
+        }
+      },
+    );
   }
 
   /**
   * Find Event by tags
-  * @param {string} tags
+  * @param {string} tag
   * @param {callback} callbackGetEventByTags
   */
   static findTags(tag, callbackGetEventByTags) {
-    tag = '%' + tag + '%';
+    const tagFormat = `${tag}%`;
     const sqlQuery = 'SELECT * FROM event JOIN tag JOIN has ON tag.id = tag_id AND event.id = event_id WHERE tag.name LIKE N?';
 
     DBConnect.query(
       sqlQuery,
-      tag,
+      tagFormat,
       (error, result) => {
-
-        if(error) {
-
-        callbackGetEventByTags({
-          error: true,
-          errorMessage: error,
-        });
-        } else {
-
-        callbackGetEventByTags({
-          error: false,
-          errorMessage: null,
-          rowMatch: result.length > 0,
-          data: result,
-        });
+        if (error) {
+          callbackGetEventByTags({
+            error: true,
+            errorMessage: error,
+          });
         }
-      }
-    )
+        else {
+          callbackGetEventByTags({
+            error: false,
+            errorMessage: null,
+            rowMatch: result.length > 0,
+            data: result,
+          });
+        }
+      },
+    );
   }
 
   /**
   * Find Event by title
-  * @param {string} name
+  * @param {string} title
   * @param {callback} callbackGetEventByTitle
   */
-  static findTitle(name, callbackGetEventByTitle) {
-    name = '%' + name + '%';
+  static findTitle(title, callbackGetEventByTitle) {
+    const titleFormat = `${title}%`;
     const sqlQuery = 'SELECT * FROM event WHERE event.title LIKE N?';
 
     DBConnect.query(
       sqlQuery,
-      name,
+      titleFormat,
       (error, result) => {
-
-        if(error) {
-
-        callbackGetEventByTitle({
-          error: true,
-          errorMessage: error,
-        });
-        } else {
-
-        callbackGetEventByTitle({
-          error: false,
-          errorMessage: null,
-          rowMatch: result.length > 0,
-          data: result,
-          query: sqlQuery,
-        });
+        if (error) {
+          callbackGetEventByTitle({
+            error: true,
+            errorMessage: error,
+          });
         }
-      }
-    )
+        else {
+          callbackGetEventByTitle({
+            error: false,
+            errorMessage: null,
+            rowMatch: result.length > 0,
+            data: result,
+            query: sqlQuery,
+          });
+        }
+      },
+    );
   }
 
   /**
@@ -261,24 +245,22 @@ class Event {
       sqlQuery,
       start,
       (error, result) => {
-
-        if(error) {
-
-        callbackGetEventByStartingDate({
-          error: true,
-          errorMessage: error,
-        });
-        } else {
-
-        callbackGetEventByStartingDate({
-          error: false,
-          errorMessage: null,
-          rowMatch: result.length > 0,
-          data: result,
-        });
+        if (error) {
+          callbackGetEventByStartingDate({
+            error: true,
+            errorMessage: error,
+          });
         }
-      }
-    )
+        else {
+          callbackGetEventByStartingDate({
+            error: false,
+            errorMessage: null,
+            rowMatch: result.length > 0,
+            data: result,
+          });
+        }
+      },
+    );
   }
 
   /**
@@ -293,24 +275,22 @@ class Event {
       sqlQuery,
       finish,
       (error, result) => {
-
-        if(error) {
-
-        callbackGetEventByEndingDate({
-          error: true,
-          errorMessage: error,
-        });
-        } else {
-
-        callbackGetEventByEndingDate({
-          error: false,
-          errorMessage: null,
-          rowMatch: result.length > 0,
-          data: result,
-        });
+        if (error) {
+          callbackGetEventByEndingDate({
+            error: true,
+            errorMessage: error,
+          });
         }
-      }
-    )
+        else {
+          callbackGetEventByEndingDate({
+            error: false,
+            errorMessage: null,
+            rowMatch: result.length > 0,
+            data: result,
+          });
+        }
+      },
+    );
   }
 
   /**
@@ -326,24 +306,22 @@ class Event {
       sqlQuery,
       [start, finish],
       (error, result) => {
-
-        if(error) {
-
-        callbackGetEventByDate({
-          error: true,
-          errorMessage: error,
-        });
-        } else {
-
-        callbackGetEventByDate({
-          error: false,
-          errorMessage: null,
-          rowMatch: result.length > 0,
-          data: result,
-        });
+        if (error) {
+          callbackGetEventByDate({
+            error: true,
+            errorMessage: error,
+          });
         }
-      }
-    )
+        else {
+          callbackGetEventByDate({
+            error: false,
+            errorMessage: null,
+            rowMatch: result.length > 0,
+            data: result,
+          });
+        }
+      },
+    );
   }
 
   /**
@@ -362,7 +340,8 @@ class Event {
             error: true,
             errorMessage: error,
           });
-        } else {
+        }
+        else {
           callbackNextEvents({
             error: false,
             errorMessage: null,
@@ -385,16 +364,19 @@ class Event {
       if (filters.length === (index + 1)) {
         if ((Object.keys(value) === 'address' || Object.keys(value) === 'title')) {
           query += `${Object.keys(value)} LIKE ${value[Object.keys(value)]};`;
-        } else {
+        }
+        else {
           query += `${Object.keys(value)} = ${value[Object.keys(value)]};`;
         }
-      } else {
-        if ((Object.keys(value) == 'address' || Object.keys(value) == 'title')) {
-          query += `${Object.keys(value)} LIKE ${value[Object.keys(value)]} AND `;
-        } else {
-          query += `${Object.keys(value)} = ${value[Object.keys(value)]} AND `;
-        }
       }
+      else if ((Object.keys(value) === 'address' || Object.keys(value) === 'title')) {
+        query += `${Object.keys(value)} LIKE ${value[Object.keys(value)]} AND `;
+      }
+      else {
+        query += `${Object.keys(value)} = ${value[Object.keys(value)]} AND `;
+      }
+
+      return query;
     });
 
     const sqlQuery = `SELECT * FROM event WHERE ${query}`;
@@ -407,7 +389,8 @@ class Event {
             error: true,
             errorMessage: error,
           });
-        } else {
+        }
+        else {
           callbackGetEventByFilter({
             error: false,
             errorMessage: null,
@@ -435,7 +418,8 @@ class Event {
             error: true,
             errorMessage: error,
           });
-        } else {
+        }
+        else {
           callbackGetEventInProgress({
             error: false,
             errorMessage: null,
