@@ -362,14 +362,14 @@ class Event {
 
     filters.map((value, index) => {
       if (filters.length === (index + 1)) {
-        if ((Object.keys(value) === 'address' || Object.keys(value) === 'title')) {
+        if ((Object.keys(value) == 'address' || Object.keys(value) == 'title')) {
           query += `${Object.keys(value)} LIKE ${value[Object.keys(value)]};`;
         }
         else {
           query += `${Object.keys(value)} = ${value[Object.keys(value)]};`;
         }
       }
-      else if ((Object.keys(value) === 'address' || Object.keys(value) === 'title')) {
+      else if ((Object.keys(value) == 'address' || Object.keys(value) == 'title')) {
         query += `${Object.keys(value)} LIKE ${value[Object.keys(value)]} AND `;
       }
       else {
