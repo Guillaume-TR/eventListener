@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
 import { css } from '@emotion/core';
 import ClipLoader from 'react-spinners/ClipLoader';
+import className from 'classnames';
 
 
 // == Import : local
@@ -23,8 +24,7 @@ const override = css`
 // == Composant Events
 class Events extends React.Component {
   state = {
-    styleForm: {},
-    styleFakeDiv: {},
+    sticky: false,
     loading: true,
   }
 
@@ -41,10 +41,7 @@ class Events extends React.Component {
     }
     // pour fixer les filtres au scroll
     if (window.innerWidth >= 768) {
-      const formTopY = document.querySelector('.events-right').getBoundingClientRect().y;
-      const formHeight = document.querySelector('.events-right').clientHeight;
-      const pos = formTopY - formHeight;
-      window.addEventListener('scroll', () => this.stickyForm(pos));
+      window.addEventListener('scroll', () => this.checkScroll());
     }
 
     if (data.length === 0) {
@@ -55,21 +52,22 @@ class Events extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.stickyForm);
+    window.removeEventListener('scroll', this.checkScroll);
   }
 
-  stickyForm = (pos) => {
-    this.setState({
-      styleForm: {
-        position: (window.scrollY >= pos) ? 'fixed' : 'static',
-        top: '70px',
-        left: '50%',
-        paddingRight: (window.scrollY >= pos) ? '1rem' : '0',
-      },
-      styleFakeDiv: {
-        display: (window.scrollY >= pos) ? 'block' : 'none',
-      },
-    });
+  checkScroll = () => {
+    const { sticky } = this.state;
+
+    if (window.pageYOffset > 350 && !sticky) {
+      this.setState({
+        sticky: true,
+      });
+    }
+    else if (window.pageYOffset < 350 && sticky) {
+      this.setState({
+        sticky: false,
+      });
+    }
   }
 
   render() {
@@ -77,7 +75,10 @@ class Events extends React.Component {
       data,
       undefinedData,
     } = this.props;
-    const { styleForm, styleFakeDiv, loading } = this.state;
+    const {
+      loading,
+      sticky,
+    } = this.state;
     return (
       <section className="events">
 
@@ -102,8 +103,8 @@ class Events extends React.Component {
                 />
               </div>
             )}
-            <div id="fake-div" style={styleFakeDiv} />
-            <div className="events-right" style={styleForm}>
+            <div id="fake-div" className={className('fake-div', { 'fake-div--block': sticky })} />
+            <div className={className('events-right', { 'events-right--sticky': sticky })}>
               <Form />
               { data.length > 0 && <EventsMap />}
             </div>
