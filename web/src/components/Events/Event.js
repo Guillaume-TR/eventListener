@@ -48,7 +48,9 @@ const Event = ({
             </div>
           </Link>
         </div>
-      ) || jsxFor === "list" && (
+      ) }
+
+      { jsxFor === 'list' && (
         <div className="event-resume">
           <img className="event-resume-image" src={urlImage} alt="image_event" />
           <div className="event-resume--right">

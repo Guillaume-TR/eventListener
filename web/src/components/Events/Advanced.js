@@ -63,10 +63,19 @@ const Advanced = ({
   return (
     <>
       <div className="advanced-filter">
-        {/* <div className="advanced-filter-tags">
-          <h4 className="advanced-filter-name">Tags</h4>
-          {tagsValues.map((tagValue) => <Inputs name="tag" status={tagValue.status} key={tagValue.title}>{tagValue.title}</Inputs>)}
-        </div> */}
+        {/*
+          <div className="advanced-filter-tags">
+            <h4 className="advanced-filter-name">Tags</h4>
+            {tagsValues.map(
+              (tagValue) =>
+              <Inputs
+                name="tag"
+                status={tagValue.status}
+                key={tagValue.title}>
+                  {tagValue.title}
+              </Inputs>)}
+          </div>
+        */}
 
         <div className="advanced-filter-group price">
           <h4 className="advanced-filter-name">
@@ -104,20 +113,20 @@ const Advanced = ({
         {timeValues.map((timeValue) => (
           <React.Fragment key={timeValue.title}>
             <div className="advanced-filter-group date">
-                <h4 className="advanced-filter-name">
-                  {timeValue.title}
-                </h4>
+              <h4 className="advanced-filter-name">
+                {timeValue.title}
+              </h4>
 
-                <input
-                  onChange={handleChange}
-                  type="date"
-                  name={timeValue.status}
-                  min="2019-10-01"
-                  max="2030-02-28"
-                />
-              </div>
-            </React.Fragment>
-          ))}
+              <input
+                onChange={handleChange}
+                type="date"
+                name={timeValue.status}
+                min="2019-10-01"
+                max="2030-02-28"
+              />
+            </div>
+          </React.Fragment>
+        ))}
 
         <div className="advanced-filter-group location">
           <h4 className="advanced-filter-name">

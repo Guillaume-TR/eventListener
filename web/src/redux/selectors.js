@@ -6,7 +6,7 @@ export const getEventStatus = (dateStart, dateEnd) => {
   const now = new Date();
   const start = new Date(dateStart);
   const end = new Date(dateEnd);
-  
+
   let eventState = 'A venir';
   if (moment(start).isBefore(now) && moment(end).isAfter(now)) {
     eventState = 'En cours';
@@ -21,7 +21,7 @@ export const getEventStatus = (dateStart, dateEnd) => {
 export const getEventDate = (dateStart, dateEnd) => {
   let start = new Date(dateStart);
   let end = new Date(dateEnd);
-  
+
   start = moment(start, 'YYYY-MM-DD').locale('fr').format('dddd DD/MM/YYYY');
   end = moment(end, 'YYYY-MM-DD').locale('fr').format('dddd DD/MM/YYYY');
 

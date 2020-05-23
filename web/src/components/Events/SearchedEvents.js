@@ -1,9 +1,11 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import Event from 'src/components/Events/Event';
+
 import { css } from '@emotion/core';
 import ClipLoader from 'react-spinners/ClipLoader';
+
+import Event from 'src/components/Events/Event';
 
 
 const override = css`
@@ -11,7 +13,6 @@ const override = css`
   margin: 10rem 30rem ;
   border-color: #6942e4;
 `;
-
 
 
 class SearchedEvents extends React.Component {
@@ -25,18 +26,22 @@ class SearchedEvents extends React.Component {
     } = this.props;
 
     // allows to get only the desired param
-    const param = this.props.location.pathname.split('/');
+    // eslint-disable-next-line react/prop-types
+    const { location } = this.props;
+    // eslint-disable-next-line react/prop-types
+    const { pathname } = location;
+    // eslint-disable-next-line react/prop-types
+    const param = pathname.split('/');
 
     // handles the quickSearchBar search
     if (param.length <= 3) {
       // fetch all events by city
-      //fetchEvents(param[2]);
+      // fetchEvents(param[2]);
 
       // fetch all events by pathname
       handleQuickSearch(param[2]);
     }
-      
-    
+
     // handles the searchForm on homepage
     if (param.length === 4) {
       const filter = [
@@ -50,8 +55,8 @@ class SearchedEvents extends React.Component {
     }
 
     // handles the request from footer links
-    if (param.length > 4 ) {
-      fetchEvents(param[4])
+    if (param.length > 4) {
+      fetchEvents(param[4]);
     }
   }
 
@@ -67,62 +72,64 @@ class SearchedEvents extends React.Component {
             <div className="events-container">
               {
                 (() => {
-                  if (homeFormData.length === 0 && locationSearchData.length === 0 && quickSearchData.length === 0) {
+                  if (homeFormData.length === 0
+                      && locationSearchData.length === 0
+                      && quickSearchData.length === 0) {
                     return (
                       <>
-                      <div className="sweet-loading">
-                  <ClipLoader
-                    css={override}
-                    sizeUnit="px"
-                    size={150}
-                    color="#123abc"
-                    loading={true}
-                  />
-                </div>
+                        <div className="sweet-loading">
+                          <ClipLoader
+                            css={override}
+                            sizeUnit="px"
+                            size={150}
+                            color="#123abc"
+                            loading
+                          />
+                        </div>
                       </>
-                    )
+                    );
                   }
                   if (homeFormData.length === 0 && locationSearchData.length === 0) {
                     return (
                       <>
-                        {
-                          quickSearchData.length > 0 ? quickSearchData.map((event) => <Event key={event.id} {...event} jsxFor="list" />) : <p> Aucun événement ne correspond à votre recherche</p>
-                        }
+                        { quickSearchData.length > 0 ? quickSearchData.map(
+                          (event) => <Event key={event.id} {...event} jsxFor="list" />,
+                        ) : <p>Aucun événement ne correspond à votre recherche</p> }
                       </>
-                    )
+                    );
                   }
                   if (homeFormData.length === 0 && quickSearchData.length === 0) {
                     return (
                       <>
-                        {
-                          locationSearchData.length > 0 ? locationSearchData.map((event) => <Event key={event.id} {...event} jsxFor="list" />) : <p>Aucun événement ne correspond à votre recherche</p>
-                        }
+                        { locationSearchData.length > 0 ? locationSearchData.map(
+                          (event) => <Event key={event.id} {...event} jsxFor="list" />,
+                        ) : <p>Aucun événement ne correspond à votre recherche</p> }
                       </>
-                    )
+                    );
                   }
                   if (locationSearchData.length > 0 && quickSearchData.length === 0) {
                     return (
                       <>
-                        {
-                          locationSearchData.length > 0 ? locationSearchData.map((event) => <Event key={event.id} {...event} jsxFor="list" />) : <p> Aucun événement ne correspond à votre recherche</p>
-                        }
+                        { locationSearchData.length > 0 ? locationSearchData.map(
+                          (event) => <Event key={event.id} {...event} jsxFor="list" />,
+                        ) : <p>Aucun événement ne correspond à votre recherche</p> }
                       </>
-                    )
+                    );
                   }
                   if (homeFormData.length === 0) {
                     return (
                       <>
-                        {
-                          locationSearchData.length > 0 ? locationSearchData.map((event) => <Event key={event.id} {...event} jsxFor="list" />) : <p> Aucun événement ne correspond à votre recherche</p>
-                        }
+                        { locationSearchData.length > 0 ? locationSearchData.map(
+                          (event) => <Event key={event.id} {...event} jsxFor="list" />,
+                        ) : <p>Aucun événement ne correspond à votre recherche</p> }
                       </>
-                    )
+                    );
                   }
                   return (
                     <>
-                      {
-                        homeFormData.length > 0 ? homeFormData.map((event) => <Event key={event.id} {...event} jsxFor="list" />) : <p>Aucun événement ne correspond à votre recherche</p>
-                      }
+                      { homeFormData.length > 0 ? homeFormData.map(
+                        (event) => <Event key={event.id} {...event} jsxFor="list" />,
+                      ) : <p>Aucun événement ne correspond à votre recherche</p> }
                     </>
                   );
                 })()
@@ -143,6 +150,7 @@ SearchedEvents.propTypes = {
   handleQuickSearch: PropTypes.func.isRequired,
   addFilters: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
+  locationSearchData: PropTypes.array.isRequired,
 };
 
 

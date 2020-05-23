@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { css } from '@emotion/core';
 import ClipLoader from 'react-spinners/ClipLoader';
 
@@ -73,6 +74,9 @@ class NextEvents extends React.Component {
 NextEvents.propTypes = {
   showNextEvents: PropTypes.func.isRequired,
   data: PropTypes.array.isRequired,
+  slide: PropTypes.number.isRequired,
+  slider: PropTypes.func.isRequired,
+  changeLeftForSlider: PropTypes.func.isRequired,
 };
 
 export default NextEvents;

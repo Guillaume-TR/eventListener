@@ -1,5 +1,6 @@
 import React from 'react';
-import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
+import PropTypes from 'prop-types';
+import { Map as LeafletMap, TileLayer, Marker } from 'react-leaflet';
 
 class EventDetailsMap extends React.Component {
   render() {
@@ -27,17 +28,16 @@ class EventDetailsMap extends React.Component {
             id="mapbox.streets"
             accessToken={accessToken}
           />
-          <Marker position={[latitude, longitude]}>
-            <Popup>
-              Google France
-              8 rue de Londres
-              75009 Paris
-            </Popup>
-          </Marker>
+          <Marker position={[latitude, longitude]} />
         </LeafletMap>
       </>
     );
   }
 }
+
+EventDetailsMap.propTypes = {
+  latitude: PropTypes.number.isRequired,
+  longitude: PropTypes.number.isRequired,
+};
 
 export default EventDetailsMap;

@@ -116,6 +116,8 @@
     }
     &--submit {
       @include form-submit;
+
+      margin: 1.5rem 0 .7rem;
     }
 
     &-label {
@@ -163,7 +165,7 @@
 
   .modal--back {
     font-size: 0;
-    background-image: url('/src/assets/images/icons/icons8-delete-50.png');
+    background-image: url('/assets/delete.png');
     width: 50px;
     height: 50px;
     position: absolute;
