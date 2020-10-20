@@ -11,7 +11,7 @@ class EventsMap extends React.Component {
 
   render() {
     const accessToken = 'pk.eyJ1IjoiZGFlbmVyeXM5NSIsImEiOiJjazJmYjNlN2QwZ3luM2xwYnlqZnE5Z3JmIn0.0eaxPyVL6cJ0QxnXXP_fHg';
-    const url = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}';
+    const url = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}';
     const { data } = this.props;
     return (
       <>
@@ -30,16 +30,11 @@ class EventsMap extends React.Component {
           >
             <TileLayer
               url={url}
-              id="mapbox.streets"
+              tileSize={512}
+              zoomOffset={-1}
+              id="mapbox/streets-v11"
               accessToken={accessToken}
             />
-            <Marker position={[46.603354, 1.8883335]}>
-              <Popup>
-                Google France
-                8 rue de Londres
-                75009 Paris
-              </Popup>
-            </Marker>
           </LeafletMap>
         )}
 
@@ -58,7 +53,9 @@ class EventsMap extends React.Component {
           >
             <TileLayer
               url={url}
-              id="mapbox.streets"
+              tileSize={512}
+              zoomOffset={-1}
+              id="mapbox/streets-v11"
               accessToken={accessToken}
             />
             { data.map((event) => (
