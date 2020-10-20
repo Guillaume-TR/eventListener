@@ -4,8 +4,8 @@ import { Map as LeafletMap, TileLayer, Marker } from 'react-leaflet';
 
 class EventDetailsMap extends React.Component {
   render() {
-    const accessToken = 'pk.eyJ1IjoiZGFlbmVyeXM5NSIsImEiOiJjazJmYjNlN2QwZ3luM2xwYnlqZnE5Z3JmIn0.0eaxPyVL6cJ0QxnXXP_fHg';
-    const url = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}';
+    const accessToken = 'pk.eyJ1Ijoic2tyYWwiLCJhIjoiY2tnaHFocHE5MGc3djJxbGlybWFvd3pmbSJ9.Ob5k8xUBEZAQs8bwutBnGw';
+    const url = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}';
     const { latitude, longitude } = this.props;
 
     return (
@@ -25,7 +25,9 @@ class EventDetailsMap extends React.Component {
         >
           <TileLayer
             url={url}
-            id="mapbox.streets"
+            tileSize={512}
+            zoomOffset={-1}
+            id="mapbox/streets-v11"
             accessToken={accessToken}
           />
           <Marker position={[latitude, longitude]} />
