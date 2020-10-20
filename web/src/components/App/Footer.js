@@ -26,9 +26,9 @@ const Footer = ({ fetchEvents }) => {
         </div>
 
         <div className="footer-social">
-          <img alt="facebook" src="https://img.icons8.com/nolan/64/000000/facebook-circled.png" />
-          <img alt="twitter" src="https://img.icons8.com/nolan/64/000000/twitter.png" />
-          <img alt="share" src="https://img.icons8.com/nolan/64/000000/share.png" />
+          <img alt="facebook" src="https://img.icons8.com/nolan/64/facebook-new.png" />
+          <img alt="twitter" src="https://img.icons8.com/nolan/64/twitter.png" />
+          <img alt="share" src="https://img.icons8.com/nolan/64/share.png" />
         </div>
 
         <div className="footer-links">
