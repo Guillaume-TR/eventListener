@@ -5769,18 +5769,6 @@ react-dom@^16.10.2:
     prop-types "^15.6.2"
     scheduler "^0.18.0"
 
-react-horizontal-scrolling-menu@^0.7.3:
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/react-horizontal-scrolling-menu/-/react-horizontal-scrolling-menu-0.7.4.tgz#e92f8537ed1b4cd49f51c5c22ff167b9d0fc4009"
-  integrity sha512-bTYrocJzztGuvNV7z6ijEQOdW/D4A2XNFseRWWF6KvjeEsCCO/tfBckB4z6FFyp8NNRPYmR/zuUKIuN0fI+jKQ==
-
-react-icons@^3.7.0:
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.8.0.tgz#229de5904809696c9f46932bd9b6126b2522866e"
-  integrity sha512-rA/8GRKjPulft8BSBSMsHkE1AGPqJ7LjNsyk0BE7XjG70Iz62zOled2SJk7LDo8x9z86a3xOstDlKlMZ4pAy7A==
-  dependencies:
-    camelcase "^5.0.0"
-
 react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.9.0:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
