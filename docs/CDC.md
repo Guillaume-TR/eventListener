@@ -91,7 +91,7 @@ Supprimer des commentaires.
 
 ### L'équipe
 
-__[Inès](https://github.com/Daenerys95)__  
+__[Inès](https://github.com/ines-mouandjolobe)__  
 Scrum Master
 
 __[Claudine](https://github.com/Nanouchkaya)__  
