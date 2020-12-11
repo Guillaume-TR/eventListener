@@ -16,4 +16,4 @@ entreprises.
 - <a href="docs/MLD-done.png" target="_blank">MLD</a>
 
 ___
-Projet réalisé avec __[Inès](https://github.com/Daenerys95)__, __[Claudine](https://github.com/Nanouchkaya)__ et __[Guillaume](https://github.com/JoK3R59)__.
+Projet réalisé avec __[Inès](https://github.com/ines-mouandjolobe)__, __[Claudine](https://github.com/Nanouchkaya)__ et __[Guillaume](https://github.com/JoK3R59)__.
