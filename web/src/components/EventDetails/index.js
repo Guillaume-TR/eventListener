@@ -1,10 +1,7 @@
-// import npm
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
-
-// import sous-composants
 import Header from 'src/containers/EventDetails/Header';
 import CheckButtons from 'src/containers/EventDetails/CheckButtons';
 import Datetime from 'src/containers/EventDetails/Datetime';
@@ -13,13 +10,9 @@ import Description from 'src/containers/EventDetails/Description';
 import EventDetailsMap from 'src/containers/EventDetails/Map';
 import Tags from 'src/containers/EventDetails/Tags';
 
-
-// import local
 import config from 'src/config';
 import './eventdetails.scss';
 
-
-// Composant EventDetails
 class EventDetails extends React.Component {
   componentDidMount() {
     const {

@@ -1,8 +1,6 @@
-// == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// == Composant QuickSearchBar
 const QuickSearchBar = ({
   value,
   handleSearchChange,
@@ -24,7 +22,7 @@ const QuickSearchBar = ({
           className="searchbar-input"
           placeholder="Recherche..."
           value={value}
-          /* Récupération de la valeur entrée dans l'input */
+          /* Get the enter value in the input */
           onChange={handleChange}
         />
       </form>
@@ -32,8 +30,6 @@ const QuickSearchBar = ({
   );
 };
 
-
-// == PropTypes
 QuickSearchBar.propTypes = {
   value: PropTypes.string,
   handleSearchChange: PropTypes.func.isRequired,
@@ -42,6 +38,4 @@ QuickSearchBar.defaultProps = {
   value: '',
 };
 
-
-// == Export
 export default QuickSearchBar;

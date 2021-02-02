@@ -1,18 +1,13 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import NextEvents from 'src/components/Home/NextEvents';
 
-// Actions import
 import {
   nextEvents,
 } from 'src/redux/actions/event';
 import {
   changeLeftForSlider,
 } from 'src/redux/actions';
-
-// Selectors import
 import {
   slider,
 } from 'src/redux/selectors';

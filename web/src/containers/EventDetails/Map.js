@@ -1,9 +1,6 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import EventDetailsMap from 'src/components/EventDetails/Map';
-
 
 const mapStateToProps = (state) => ({
   data: state.form.data,

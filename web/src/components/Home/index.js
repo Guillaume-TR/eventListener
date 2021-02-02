@@ -1,7 +1,5 @@
-// == import : npm
 import React from 'react';
 
-// == import : local
 import SearchForm from 'src/containers/Home/SearchForm';
 import NextEvents from 'src/containers/Home/NextEvents';
 import Now from 'src/containers/Home/Now';
@@ -9,8 +7,6 @@ import Contact from './Contact';
 import HomeMap from './Map';
 import './home.scss';
 
-
-// == Composant
 class Home extends React.Component {
   state = {}
 
@@ -55,5 +51,4 @@ class Home extends React.Component {
   }
 }
 
-// == Export
 export default Home;

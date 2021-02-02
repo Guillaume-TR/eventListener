@@ -1,12 +1,9 @@
-// import npm
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import local
 import Event from 'src/containers/Events/Event';
 import './user.scss';
 
-// composant
 const UserEvents = ({
   eventsInterest,
   eventsParticipate,
@@ -73,5 +70,4 @@ UserEvents.propTypes = {
   eventsParticipate: PropTypes.array.isRequired,
 };
 
-// export
 export default UserEvents;

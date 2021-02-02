@@ -1,11 +1,8 @@
 /* eslint-disable max-len */
-// == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink, Route } from 'react-router-dom';
 
-
-// == Import : local
 import '../Modal/modal.scss';
 import menuBurgerOpenIcon from 'src/assets/images/icons/icons8-xbox-menu-50.png';
 import menuBurgerCloseIcon from 'src/assets/images/icons/icons8-cancel-50.png';
@@ -16,8 +13,6 @@ import QuickSearchBar from 'src/containers/Home/QuickSearchBar';
 import RegisterForm from 'src/containers/Modal/RegisterForm';
 import LoginForm from 'src/containers/Modal/LoginForm';
 
-
-// == Composant Nav
 class Nav extends React.Component {
   state = {}
 
@@ -54,7 +49,7 @@ class Nav extends React.Component {
       closeNavMenu,
     } = this.props;
 
-    /* Fonction qui gère l'ouverture des deux modals Connexion et Inscription */
+    /* Function who manage the opening of the two modals "login" and "register" */
     const handleNavModals = (event) => {
       openNavModal(event.target.name);
     };
@@ -66,7 +61,7 @@ class Nav extends React.Component {
 
     const menuburgerIcon = !menuBurger ? menuBurgerOpenIcon : menuBurgerCloseIcon;
 
-    /* Constante qui gère l'apparition du menu burger */
+    /* Constante who manage the display of the burger menu */
     const menuBurgerClass = menuBurger ? 'menu-visible' : 'menu';
 
     return (
@@ -85,7 +80,7 @@ class Nav extends React.Component {
           </Route>
         </div>
 
-        {/* Au click sur l'icon du menu burger, la props "menuBurger" passe à "true" et donc la propriété CSS change ET l'icone change également */}
+        {/* By clicking on the menu burger icon, the props 'menuBurger" change to "true" and the property CSS and the icon change */}
         <img
           src={menuburgerIcon}
           alt="Menu"
@@ -105,7 +100,7 @@ class Nav extends React.Component {
               Tous les événements
             </NavLink>
 
-            {/* Gestion de l'affichage de la nav si l'utilisateur est connecté ou non */}
+            {/* The navbar display change if the user is connected or not  */}
             { isConnected && (
               <>
                 <div className="navigation-item--right">
@@ -176,8 +171,6 @@ class Nav extends React.Component {
   }
 }
 
-
-// == PropTypes
 Nav.propTypes = {
   menuBurger: PropTypes.bool.isRequired,
   showLogin: PropTypes.bool.isRequired,
@@ -190,6 +183,4 @@ Nav.propTypes = {
   closeNavMenu: PropTypes.func.isRequired,
 };
 
-
-// == Export
 export default Nav;

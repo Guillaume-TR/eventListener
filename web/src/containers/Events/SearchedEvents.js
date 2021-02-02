@@ -1,17 +1,13 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import SearchedEvents from 'src/components/Events/SearchedEvents';
 
-// Actions import
 import {
   fetchEventsByLocation,
   handleQuickSearch,
   handleSubmit,
   addFilters,
 } from 'src/redux/actions/temp';
-
 
 const mapStateToProps = (state) => ({
   locationSearchData: state.app.data,

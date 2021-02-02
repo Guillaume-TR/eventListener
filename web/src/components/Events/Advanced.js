@@ -1,38 +1,24 @@
-// == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
-// == Import : local
 import Inputs from 'src/containers/Events/Inputs';
 
-
-// == Data
-const tagsValues = [
-  { title: 'Tech', status: true },
-  { title: 'Data', status: true },
-  { title: 'Code', status: true },
-  { title: 'Js', status: true },
-  { title: 'React', status: true },
-];
-
-const priceValues = [
-  { title: 'Gratuit', status: false },
-  { title: 'Payant', status: true },
-];
-
-const liveValues = [
-  { title: 'Oui', status: true },
-  { title: 'Non', status: false },
-];
-
-const timeValues = [
-  { title: 'Date de début', status: 'date_start' },
-  { title: 'Date de fin', status: 'date_end' },
-];
+const advancedForm = {
+  priceValues: [
+    { title: 'Gratuit', status: false },
+    { title: 'Payant', status: true }
+  ],
+  liveValues: [
+    { title: 'Oui', status: false },
+    { title: 'Non', status: true }
+  ],
+  timeValues: [
+    { title: 'Date de début', status: 'date_start' },
+    { title: 'Date de fin', status: 'date_end' }
+  ],
+}
 
 
-// == Composant Advanced
 const Advanced = ({
   addressValue,
   addAddressValue,
@@ -43,6 +29,7 @@ const Advanced = ({
     const filter = {
       [name]: `'${value}'`,
     };
+
     fillFilterList(filter);
   };
   const _onChange = (event) => {
@@ -50,39 +37,16 @@ const Advanced = ({
     addAddressValue(value);
   };
 
-  const _onBlur = (event) => {
-    const { value, name } = event.target;
-    addAddressValue(value);
-    const filter = {
-      [name]: `'%${addressValue}%'`,
-    };
-    fillFilterList(filter);
-  };
-
 
   return (
     <>
       <div className="advanced-filter">
-        {/*
-          <div className="advanced-filter-tags">
-            <h4 className="advanced-filter-name">Tags</h4>
-            {tagsValues.map(
-              (tagValue) =>
-              <Inputs
-                name="tag"
-                status={tagValue.status}
-                key={tagValue.title}>
-                  {tagValue.title}
-              </Inputs>)}
-          </div>
-        */}
-
         <div className="advanced-filter-group price">
           <h4 className="advanced-filter-name">
             Prix
           </h4>
 
-          {priceValues.map((priceValue) => (
+          {advancedForm.priceValues.map((priceValue) => (
             <Inputs
               name="price"
               status={priceValue.status}
@@ -98,7 +62,7 @@ const Advanced = ({
             Diffusion en ligne
           </h4>
 
-          {liveValues.map((liveValue) => (
+          {advancedForm.liveValues.map((liveValue) => (
             <Inputs
               name="is_online"
               status={liveValue.status}
@@ -110,7 +74,7 @@ const Advanced = ({
         </div>
 
 
-        {timeValues.map((timeValue) => (
+        {advancedForm.timeValues.map((timeValue) => (
           <React.Fragment key={timeValue.title}>
             <div className="advanced-filter-group date">
               <h4 className="advanced-filter-name">
@@ -135,7 +99,6 @@ const Advanced = ({
 
           <input
             onChange={_onChange}
-            onBlur={_onBlur}
             list="villes"
             id="advanced-filter-input"
             name="address"

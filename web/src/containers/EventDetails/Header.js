@@ -1,10 +1,7 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import Header from 'src/components/EventDetails/Header';
 
-// Actions import
 import {
   changeShareLinksModal,
 } from 'src/redux/actions/event';
@@ -12,11 +9,9 @@ import {
   changeLikeToTheEvent,
 } from 'src/redux/actions/user';
 
-// Selectors import
 import {
   getEventStatus,
 } from 'src/redux/selectors';
-
 
 const mapStateToProps = (state) => ({
   showModal: state.eventDetails.showModal,

@@ -1,10 +1,7 @@
-// Global import
 import axios from 'axios';
 
-// Local import
 import config from 'src/config';
 
-// Actions import
 import {
   CHANGE_LIKE_TO_THE_EVENT,
   CHANGE_INTEREST_TO_THE_EVENT,

@@ -1,17 +1,13 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import User from 'src/components/User';
 
-// Actions import
 import {
   fetchNewUserInfos,
 } from 'src/redux/actions/user';
 import {
   closeNavMenu,
 } from 'src/redux/actions';
-
 
 const mapStateToProps = () => ({});
 

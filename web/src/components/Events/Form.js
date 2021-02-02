@@ -1,13 +1,8 @@
-// == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
-// == Import : local
 import Advanced from 'src/containers/Events/Advanced';
 
-
-// == Composant Form
 const Form = ({
   handleFormChange,
   handleSubmit,
@@ -60,8 +55,6 @@ const Form = ({
   );
 };
 
-
-// == PropTypes
 Form.propTypes = {
   handleFormChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
@@ -80,6 +73,4 @@ Form.defaultProps = {
   fillFilterList: undefined,
 };
 
-
-// == Export
 export default Form;

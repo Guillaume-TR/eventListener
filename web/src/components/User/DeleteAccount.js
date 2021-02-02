@@ -1,12 +1,8 @@
-// import npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
 
-// import local
 import './user.scss';
 
-// composant
 const DeleteAccount = ({ deleteUser, changeModalStatus }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -38,5 +34,4 @@ DeleteAccount.defaultProps = {
 
 };
 
-// export
 export default DeleteAccount;

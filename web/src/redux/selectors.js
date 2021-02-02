@@ -1,7 +1,6 @@
-// https://momentjs.com/docs/#/displaying/format/
-import moment from 'moment';
+import moment from 'moment'; // https://momentjs.com/docs/#/displaying/format/
 
-// fonction pour définir si l'evt est en cours, à venir ou terminé (dans eventDetails)
+// function to define if the events is in progress, to come or finished (in eventDetails)
 export const getEventStatus = (dateStart, dateEnd) => {
   const now = new Date();
   const start = new Date(dateStart);
@@ -17,7 +16,7 @@ export const getEventStatus = (dateStart, dateEnd) => {
   return eventState;
 };
 
-// fonction pour afficher la date de fin d'un evt s'il dure plus d'un jour (dans eventDetails)
+// function to display the end date of the event if this event lasts more one day (in eventDetails)
 export const getEventDate = (dateStart, dateEnd) => {
   let start = new Date(dateStart);
   let end = new Date(dateEnd);
@@ -33,21 +32,21 @@ export const getEventDate = (dateStart, dateEnd) => {
 
 
 /**
- * @param {number} totalElt nombre total d'éléments dans le slider
- * @param {number} slide valeur css left du bloc contenant les éléments
- * @param {number} width largeur d'un élément
- * @param {function} action à dispatcher
+ * @param {number} totalElt total number of the elements in the slider
+ * @param {number} slide css left value of the block who content the elements
+ * @param {number} width
+ * @param {function} action to the dispatch
  * @param {string} dir direction
  */
 export const slider = (totalElt, slide, width, action, dir) => {
 
-  // pour slide vers la droite
+  // for slide to the right
   if (dir === 'right' && (totalElt * -width) !== slide) {
     slide -= width;
     action(slide);
   }
 
-  // pour slide vers la gauche
+  // for slide to the left
   if (dir === 'left' && slide !== 0) {
     slide += width;
     action(slide);
@@ -56,8 +55,8 @@ export const slider = (totalElt, slide, width, action, dir) => {
 
 /**
  * @param {string} address
- * @var addressArray retourne un tableau de chaque ligne de l'adresse
- * @var lastIndex permet de récupérer le nombre d'elt du tableau - 1, soit le dernier index
+ * @var addressArray return an array with an address for each line
+ * @var lastIndex get the element number of the table - 1, the last index
  */
 export const getCity = (address) => {
   const addressArray = address.split('<br />');

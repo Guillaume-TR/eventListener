@@ -1,9 +1,6 @@
-// == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
-// == Composant Inputs
 class Inputs extends React.Component {
   handleChange = (event) => {
     const { fillFilterList } = this.props;
@@ -41,7 +38,6 @@ class Inputs extends React.Component {
   }
 }
 
-// == PropTypes
 Inputs.propTypes = {
   children: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -49,6 +45,4 @@ Inputs.propTypes = {
   fillFilterList: PropTypes.func.isRequired,
 };
 
-
-// == Export
 export default Inputs;

@@ -1,4 +1,3 @@
-// == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
@@ -7,8 +6,6 @@ import { css } from '@emotion/core';
 import ClipLoader from 'react-spinners/ClipLoader';
 import className from 'classnames';
 
-
-// == Import : local
 import './events.scss';
 import Form from 'src/containers/Events/Form';
 import Event from 'src/containers/Events/Event';
@@ -22,7 +19,6 @@ const override = css`
 `;
 
 
-// == Composant Events
 class Events extends React.Component {
   state = {
     sticky: false,
@@ -129,6 +125,4 @@ Events.defaultProps = {
   undefinedData: '',
 };
 
-
-// == Export
 export default Events;

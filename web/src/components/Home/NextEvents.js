@@ -10,7 +10,6 @@ import iconArrowRight from 'src/assets/images/icons/icons8-undefined-50-7.png';
 
 import 'src/components/Events/events.scss';
 
-
 const override = css`
   display: block;
   margin: 20rem auto;

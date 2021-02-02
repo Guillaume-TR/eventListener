@@ -8,7 +8,6 @@ import {
   FETCH_USER_PREFERENCES_TO_THE_EVENT,
 } from '../actions/user';
 
-
 const detailsState = {
   showModal: false,
   data: {},
@@ -17,7 +16,6 @@ const detailsState = {
   interested: false,
   participation: false,
 };
-
 
 export const eventDetails = (state = detailsState, action = {}) => {
   switch (action.type) {

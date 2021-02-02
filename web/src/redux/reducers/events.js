@@ -1,4 +1,3 @@
-// Actions import
 import {
   HANDLE_FORM_CHANGE,
   HANDLE_SUBMIT,
@@ -9,7 +8,6 @@ import {
   EMPTY_FORM_VALUE,
   FILL_FILTER_LIST,
 } from '../actions/temp';
-
 
 const initialState = {
   value: '',
@@ -22,7 +20,6 @@ const initialState = {
   longitude: 2.3514616,
   caseNoData: '',
 };
-
 
 export const form = (state = initialState, action = {}) => {
   switch (action.type) {

@@ -1,7 +1,5 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import Description from 'src/components/EventDetails/Description';
 
 

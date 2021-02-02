@@ -15,7 +15,6 @@ import {
   FETCH_EVENT_IN_PROGRESS,
 } from '../actions/event';
 
-
 const initialState = {
   value: '',
   address: '',
@@ -27,7 +26,6 @@ const initialState = {
   quickSearchData: [],
   eventInProgress: {},
 };
-
 
 export const home = (state = initialState, action = {}) => {
   switch (action.type) {

@@ -1,17 +1,13 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import EventDetails from 'src/components/EventDetails';
 
-// Actions import
 import {
   getEventDetails,
 } from 'src/redux/actions/event';
 import {
   fetchUserPreferencesToTheEvent,
 } from 'src/redux/actions/user';
-
 
 const mapStateToProps = (state) => ({
   banner: state.eventDetails.data.url_image,

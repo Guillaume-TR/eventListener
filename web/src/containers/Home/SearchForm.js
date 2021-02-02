@@ -1,10 +1,7 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import SearchForm from 'src/components/Home/SearchForm';
 
-// Actions import
 import {
   changeSearchFormValue,
   handleSearchFormChange,
@@ -13,7 +10,6 @@ import {
   fillFilterList,
   addFilters,
 } from 'src/redux/actions/temp';
-
 
 const mapStateToProps = (state) => ({
   locationValue: state.home.address,

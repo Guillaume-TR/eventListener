@@ -17,7 +17,6 @@ import {
   SEND_LOCATION_SEARCH_DATA,
 } from '../actions/temp';
 
-
 const initialState = {
   isConnected: false,
   menuBurger: false,
@@ -47,7 +46,6 @@ const initialState = {
   },
   data: [],
 };
-
 
 export const app = (state = initialState, action = {}) => {
   switch (action.type) {

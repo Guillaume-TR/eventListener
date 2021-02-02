@@ -1,9 +1,6 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import UserEvents from 'src/components/User/UserEvents';
-
 
 const mapStateToProps = (state) => ({
   eventsLike: state.user.eventsLike,

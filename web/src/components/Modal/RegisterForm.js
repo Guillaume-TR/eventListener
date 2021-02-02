@@ -1,10 +1,7 @@
-// == Import : npm
 import React from 'react';
 import Proptypes from 'prop-types';
 import classNames from 'classnames';
 
-
-// == Composant RegisterForm
 const RegisterForm = ({
   handleclose,
   pseudo,
@@ -157,7 +154,6 @@ const RegisterForm = ({
             {message.content}
           </div>
         ) }
-        {/* Fermeture de la modale au click */}
         <a
           className="modal--back"
           name="register"
@@ -171,7 +167,6 @@ const RegisterForm = ({
   );
 };
 
-// == PropTypes
 RegisterForm.propTypes = {
   handleclose: Proptypes.func.isRequired,
   pseudo: Proptypes.string.isRequired,
@@ -194,5 +189,4 @@ RegisterForm.defaultProps = {
   },
 };
 
-// == Export
 export default RegisterForm;

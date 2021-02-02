@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-// == Composant
 const Footer = ({ fetchEvents }) => {
   // Fetch the events based on the location when clicking on the footer links
   const handleClick = (event) => {
@@ -56,12 +55,8 @@ const Footer = ({ fetchEvents }) => {
   );
 };
 
-
-// == PropTypes
 Footer.propTypes = {
   fetchEvents: PropTypes.func.isRequired,
 };
 
-
-// == Export
 export default Footer;

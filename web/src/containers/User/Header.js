@@ -1,9 +1,6 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import Header from 'src/components/User/Header';
-
 
 const mapStateToProps = (state) => ({
   pseudo: state.user.pseudo,

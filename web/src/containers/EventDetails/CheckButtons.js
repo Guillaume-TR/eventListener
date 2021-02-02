@@ -1,15 +1,11 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import CheckButtons from 'src/components/EventDetails/CheckButtons';
 
-// Actions import
 import {
   changeInterestToTheEvent,
   changeParticipationToTheEvent,
 } from 'src/redux/actions/user';
-
 
 const mapStateToProps = (state) => ({
   interested: state.eventDetails.interested,

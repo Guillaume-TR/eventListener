@@ -1,10 +1,7 @@
-// == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-
-// == Composant CheckButtons
 const CheckButtons = ({
   interested,
   participation,
@@ -49,5 +46,4 @@ CheckButtons.propTypes = {
   changeParticipationToTheEvent: PropTypes.func.isRequired,
 }
 
-// == Export
 export default CheckButtons;

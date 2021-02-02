@@ -1,14 +1,10 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import Events from 'src/components/Events';
 
-// Actions import
 import {
   allEvents,
 } from 'src/redux/actions/temp';
-
 
 const mapStateToProps = (state) => ({
   data: state.form.data,

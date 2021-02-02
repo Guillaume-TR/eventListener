@@ -1,10 +1,7 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import Nav from 'src/components/App/Nav';
 
-// Actions import
 import {
   openNavModal,
   activeNavMenu,
@@ -13,7 +10,6 @@ import {
 import {
   deconnect,
 } from 'src/redux/actions/user';
-
 
 const mapStateToProps = (state) => ({
   menuBurger: state.app.menuBurger,

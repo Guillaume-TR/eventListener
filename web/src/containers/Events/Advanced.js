@@ -1,16 +1,12 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import Advanced from 'src/components/Events/Advanced';
 
-// Actions import
 import {
   addFilters,
   addAddressValue,
   fillFilterList,
 } from 'src/redux/actions/temp';
-
 
 const mapStateToProps = (state) => ({
   stateTest: state.form.dataFilter,

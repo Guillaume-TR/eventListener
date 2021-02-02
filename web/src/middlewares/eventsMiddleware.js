@@ -1,10 +1,7 @@
-// Global import
 import axios from 'axios';
 
-// Local import
 import config from 'src/config';
 
-// Actions import
 import {
   TRIGGER_MIDDLEWARE,
   ALL_EVENTS,
@@ -21,7 +18,6 @@ import {
   fetchNextEvents,
   fetchEventInProgress,
 } from 'src/redux/actions/event';
-
 
 const eventsMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -104,8 +100,8 @@ const eventsMiddleware = (store) => (next) => (action) => {
       break;
     }
     /**
-      * requête pour récupérer les prochains événements à afficher sur l'accueil
-      * next-events/:number => nombre d'evt à afficher
+      * Get the next events for the home page
+      * next-events/:number => events number to display 
       */
     case NEXT_EVENTS: {
       axios.get(`${config.api}/events/next-events/5`)

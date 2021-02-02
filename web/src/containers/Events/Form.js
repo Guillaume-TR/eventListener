@@ -1,10 +1,7 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import Form from 'src/components/Events/Form';
 
-// Actions import
 import {
   handleFormChange,
   handleSubmit,
@@ -15,7 +12,6 @@ import {
   emptyFormValue,
   fillFilterList,
 } from 'src/redux/actions/temp';
-
 
 const mapStateToProps = (state) => ({
   formValue: state.form.value,

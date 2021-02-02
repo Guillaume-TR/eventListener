@@ -1,13 +1,9 @@
-// == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
-// == Import : local
 import './user.scss';
 import DeleteAccount from 'src/containers/User/DeleteAccount';
 
-// == Composant Preferences
 const Preferences = ({
   user,
   firstname,
@@ -27,7 +23,6 @@ const Preferences = ({
   updateValueUser,
   deleteShowMessage,
 }) => {
-  /* Passade de true/false pour affichage des modals */
   const handleChangeModalStatus = () => {
     changeModalStatus();
   };
@@ -37,19 +32,16 @@ const Preferences = ({
     handleChangEditorMode();
   };
 
-  /* Permet de récupérer la valeur entrée dans l'input */
   const handleChangeValue = (event) => {
     const { value, name } = event.target;
     changeValue(name, value);
   };
 
-  /* Passage de true/false sur les checkbox */
   const handleChangeCheckValue = (event) => {
     const { name } = event.target;
     changeCheckInputValue(name);
   };
 
-  /* Update User*/
   const handleUpdateUser = (event) => {
     event.preventDefault();
     updateValueUser(user);
@@ -230,8 +222,6 @@ const Preferences = ({
   );
 };
 
-
-// == PropTypes
 Preferences.propTypes = {
   firstname: PropTypes.string.isRequired,
   lastname: PropTypes.string.isRequired,
@@ -257,5 +247,4 @@ Preferences.defaultProps = {
   confirmPassword: '',
 };
 
-// == Export
 export default Preferences;

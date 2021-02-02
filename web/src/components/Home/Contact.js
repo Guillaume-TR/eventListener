@@ -1,10 +1,7 @@
-// Import global
 import React from 'react';
 import axios from 'axios';
 
-// Imoport local
 import config from 'src/config';
-
 
 class Contact extends React.Component {
   state = {
@@ -118,6 +115,4 @@ class Contact extends React.Component {
   }
 }
 
-
-// == Export
 export default Contact;

@@ -1,10 +1,7 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import Preferences from 'src/components/User/Preferences';
 
-// Actions import
 import {
   changeInputValue,
   changeModalStatus,
@@ -13,7 +10,6 @@ import {
   changeUpdateUser,
   deleteShowMessage,
 } from 'src/redux/actions/user';
-
 
 const mapStateToProps = (state) => ({
   user: state.user,

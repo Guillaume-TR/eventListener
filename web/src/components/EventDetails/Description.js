@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import iconInfo from 'src/assets/images/icons/icons8-info-50.png';
 
 const Description = ({ description }) => {
-  /* pour limiter le risque XSS */
+  /* to limite the risque XSS */
   const pureDescription = (
     <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(description) }} />
   );

@@ -1,5 +1,4 @@
 /* eslint-disable react/no-danger */
-// == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -9,7 +8,6 @@ import moment from 'moment';
 import iconPlus from 'src/assets/images/icons/icons8-plus-50.png';
 
 
-// == Composant Event
 const Event = ({
   id,
   title,
@@ -87,5 +85,6 @@ Event.propTypes = {
 Event.defaultProps = {
   getCity: () => {},
 };
-// == Export
+
+
 export default Event;

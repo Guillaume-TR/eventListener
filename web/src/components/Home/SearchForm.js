@@ -1,8 +1,6 @@
-// == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// == Composant SearchForm
 const SearchForm = ({
   locationValue,
   keywordValue,
@@ -59,8 +57,6 @@ const SearchForm = ({
   );
 };
 
-
-// == PropTypes
 SearchForm.propTypes = {
   locationValue: PropTypes.string,
   keywordValue: PropTypes.string,
@@ -73,5 +69,4 @@ SearchForm.defaultProps = {
   keywordValue: '',
 };
 
-// == Export
 export default SearchForm;

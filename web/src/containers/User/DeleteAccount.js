@@ -1,14 +1,10 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import DeleteAccount from 'src/components/User/DeleteAccount';
 
-// Actions import
 import {
   deleteUser,
 } from 'src/redux/actions/user';
-
 
 const mapStateToProps = () => ({});
 

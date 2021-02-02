@@ -1,4 +1,3 @@
-// == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -7,13 +6,11 @@ import ClipLoader from 'react-spinners/ClipLoader';
 
 import Event from 'src/components/Events/Event';
 
-
 const override = css`
   display: block;
   margin: 10rem 30rem ;
   border-color: #6942e4;
 `;
-
 
 class SearchedEvents extends React.Component {
   componentDidMount() {
@@ -142,7 +139,6 @@ class SearchedEvents extends React.Component {
   }
 }
 
-// == PropTypes
 SearchedEvents.propTypes = {
   quickSearchData: PropTypes.array.isRequired,
   homeFormData: PropTypes.array.isRequired,
@@ -153,6 +149,4 @@ SearchedEvents.propTypes = {
   locationSearchData: PropTypes.array.isRequired,
 };
 
-
-// == Export
 export default SearchedEvents;

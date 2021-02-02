@@ -1,16 +1,12 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import QuickSearchBar from 'src/components/Home/QuickSearchBar';
 
-// Actions import
 import {
   handleSearchChange,
   handleSearchSubmit,
   handleQuickSearch,
 } from 'src/redux/actions/temp';
-
 
 const mapStateToProps = (state) => ({
   searchBar: state.home.searchBar,

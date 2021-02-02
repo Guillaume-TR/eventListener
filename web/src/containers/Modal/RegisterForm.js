@@ -1,16 +1,12 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import RegisterForm from 'src/components/Modal/RegisterForm';
 
-// Actions import
 import {
   changeInputValueInModal,
   changeCheckValueInModal,
   submitRegister,
 } from 'src/redux/actions/user';
-
 
 const mapStateToProps = (state) => ({
   pseudo: state.app.registerContent.pseudo,

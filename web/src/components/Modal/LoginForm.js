@@ -1,10 +1,7 @@
-// == Import : npm
 import React from 'react';
 import Proptypes from 'prop-types';
 import classNames from 'classnames';
 
-
-// == Composant LoginForm
 const LoginForm = ({
   email,
   password,
@@ -92,7 +89,6 @@ const LoginForm = ({
           />
           Rester connecté
         </label>
-        {/* Fermeture de la modal au click */}
         <a
           className="modal--back"
           name="login"
@@ -106,8 +102,6 @@ const LoginForm = ({
   );
 };
 
-
-// == PropTypes
 LoginForm.propTypes = {
   email: Proptypes.string.isRequired,
   password: Proptypes.string.isRequired,
@@ -129,5 +123,4 @@ LoginForm.defaultProps = {
   },
 };
 
-// == Export
 export default LoginForm;

@@ -1,9 +1,7 @@
-// == Import : npm
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-// == Import : local
 import './app.scss';
 import Home from 'src/components/Home';
 import Events from 'src/containers/Events';
@@ -16,7 +14,6 @@ import LegalMentions from 'src/components/LegalMentions';
 import PrivatePolicy from 'src/components/PrivatePolicy';
 import Errors from 'src/components/Errors';
 
-// == Composant
 class App extends React.Component {
   state = { }
 
@@ -62,5 +59,4 @@ App.propTypes = {
   isConnected: PropTypes.bool.isRequired,
 };
 
-// == Export
 export default App;

@@ -1,16 +1,12 @@
-// Global import
 import { connect } from 'react-redux';
 
-// Local import
 import LoginForm from 'src/components/Modal/LoginForm';
 
-// Actions import
 import {
   changeInputValueInModal,
   changeCheckValueInModal,
   submitLogin,
 } from 'src/redux/actions/user';
-
 
 const mapStateToProps = (state) => ({
   email: state.app.loginContent.email,

@@ -1,15 +1,11 @@
-// import npm
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import local
 import './user.scss';
 import Header from 'src/containers/User/Header';
 import Preferences from 'src/containers/User/Preferences';
 import UserEvents from 'src/containers/User/UserEvents';
 
-
-// composant
 class User extends React.Component {
   state = {}
 
@@ -40,5 +36,4 @@ User.propTypes = {
   closeNavMenu: PropTypes.func.isRequired,
 };
 
-// export
 export default User;
